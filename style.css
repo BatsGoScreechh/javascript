@@ -1,0 +1,4 @@
+#weather-forecast {
+    display: flex;
+    justify-content: space-evenly;
+}
