@@ -202,6 +202,12 @@ var weatherData = {
         <p>${forecast3.text}</p>
    `
    
+   var bodyLow = `
+          <body class="highlow"></body>
+   `
+
+
+
    var todayContainer = document.querySelector("#current-weather");
    todayContainer.innerHTML = HTMLString;
 
@@ -213,12 +219,13 @@ var weatherData = {
    forecastContainer3.innerHTML = day3Forecast;
 
 
-
 if (forecast1.high <= 20 && forecast2.high <= 20 && forecast3.high <= 20) {
-     document.body.style.backgroundColor = "lightblue";
+
+          document.body.style.backgroundColor = "lightblue";
+
 }
      else if(forecast1.high >= 85 && forecast2.high >= 85 && forecast3.high >= 85) {
-          document.body.style.backgroundColor = "red";
+          document.body.style.backgroundColor = "lightred";
      }
      
      else {
@@ -228,28 +235,70 @@ if (forecast1.high <= 20 && forecast2.high <= 20 && forecast3.high <= 20) {
 
 
 if (forecast1.low <= 20) {
-     forecastContainer.style.background = "darkblue";
+     var day1Forecast = `
+     <h3 class="low">${forecast1.date}</h3>
+     <p class="low">${forecast1.high}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="low">${forecast1.low}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="low">${forecast1.text}</p>
+`
+var forecastContainer = document.querySelector(".forecast-day");
+forecastContainer.innerHTML = day1Forecast;
 }
 
 if (forecast2.low <= 20) {
-     forecastContainer2.style.backgroundColor = "darkblue";
+     var day2Forecast = `
+     <h3 class="low">${forecast2.date}</h3>
+     <p class="low">${forecast2.high}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="low">${forecast2.low}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="low">${forecast2.text}</p>
+`
+var forecastContainer = document.querySelector(".forecast-day2");
+forecastContainer2.innerHTML = day2Forecast;
 }
-
 
 if (forecast3.low <= 20) {
-     forecastContainer3.style.backgroundColor = "darkblue";
+     var day3Forecast = `
+     <h3 class="low">${forecast3.date}</h3>
+     <p class="low">${forecast3.high}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="low">${forecast3.low}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="low">${forecast3.text}</p>
+`
+var forecastContainer = document.querySelector(".forecast-day3");
+forecastContainer3.innerHTML = day3Forecast;
 }
 
+/*Highs*/
 if (forecast1.high >= 95) {
-     forecastContainer.style.backgroundColor = "darkred";
+     var day1Forecast = `
+     <h3 class="high">${forecast1.date}</h3>
+     <p class="high">${forecast1.high}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="high">${forecast1.low}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="high">${forecast1.text}</p>
+`
+var forecastContainer = document.querySelector(".forecast-day");
+forecastContainer.innerHTML = day1Forecast;
 }
 
 if (forecast2.high >= 95) {
-     forecastContainer2.style.backgroundColor = "darkred";
+     var day2Forecast = `
+     <h3 class="high">${forecast2.date}</h3>
+     <p class="high">${forecast2.high}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="high">${forecast2.low}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="high">${forecast2.text}</p>
+`
+var forecastContainer = document.querySelector(".forecast-day2");
+forecastContainer2.innerHTML = day2Forecast;
 }
 
 if (forecast3.high >= 95) {
-     forecastContainer3.style.backgroundColor = "darkred";
+     var day3Forecast = `
+     <h3 class="high">${forecast3.date}</h3>
+     <p class="high">${forecast3.high}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="high">${forecast3.low}${weatherData.query.results.channel.units.temperature}</p>
+     <p class="high">${forecast3.text}</p>
+`
+var forecastContainer = document.querySelector(".forecast-day3");
+forecastContainer3.innerHTML = day3Forecast;
 }
 
 

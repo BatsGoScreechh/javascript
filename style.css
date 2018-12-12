@@ -5,24 +5,18 @@
 
 .highhigh {
     background-color: red;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .highlow {
     background-color: lightblue;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .high {
     background-color: darkred;
-    display: flex;
-    justify-content: space-evenly;
+    color: #FFF;
 }
 
 .low {
     background-color: darkblue;
-    display: flex;
-    justify-content: space-evenly;
+    color: #FFF;
 }
