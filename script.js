@@ -175,6 +175,7 @@ var weatherData = {
      "low": "2",
      "text": "Mostly Cloudy"
  }
+
    var HTMLString = `
         <h1>${weatherData.query.results.channel.location.city} ${weatherData.query.results.channel.location.country} ${weatherData.query.results.channel.location.region}</h1>
         <h2>${weatherData.query.results.channel.item.condition.temp}${weatherData.query.results.channel.units.temperature} ${weatherData.query.results.channel.item.condition.text} </h2>
@@ -206,10 +207,51 @@ var weatherData = {
 
    var forecastContainer = document.querySelector(".forecast-day");
    forecastContainer.innerHTML = day1Forecast;
-   var forecastContainer = document.querySelector(".forecast-day2");
-   forecastContainer.innerHTML = day2Forecast;
-   var forecastContainer = document.querySelector(".forecast-day3");
-   forecastContainer.innerHTML = day3Forecast;
+   var forecastContainer2 = document.querySelector(".forecast-day2");
+   forecastContainer2.innerHTML = day2Forecast;
+   var forecastContainer3 = document.querySelector(".forecast-day3");
+   forecastContainer3.innerHTML = day3Forecast;
+
+
+
+if (forecast1.high <= 20 && forecast2.high <= 20 && forecast3.high <= 20) {
+     document.body.style.backgroundColor = "lightblue";
+}
+     else if(forecast1.high >= 85 && forecast2.high >= 85 && forecast3.high >= 85) {
+          document.body.style.backgroundColor = "red";
+     }
+     
+     else {
+          document.body.style.backgroundColor = "white";
+
+     } 
+
+
+if (forecast1.low <= 20) {
+     forecastContainer.style.background = "darkblue";
+}
+
+if (forecast2.low <= 20) {
+     forecastContainer2.style.backgroundColor = "darkblue";
+}
+
+
+if (forecast3.low <= 20) {
+     forecastContainer3.style.backgroundColor = "darkblue";
+}
+
+if (forecast1.high >= 95) {
+     forecastContainer.style.backgroundColor = "darkred";
+}
+
+if (forecast2.high >= 95) {
+     forecastContainer2.style.backgroundColor = "darkred";
+}
+
+if (forecast3.high >= 95) {
+     forecastContainer3.style.backgroundColor = "darkred";
+}
+
 
 
 
